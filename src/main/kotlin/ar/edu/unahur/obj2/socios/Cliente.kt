@@ -1,8 +1,9 @@
 package ar.edu.unahur.obj2.socios
 
-class Cliente(private val estadoDelCliente = object, val viveEn = object, val bolsillo: Int = 0, val pedido: Pedido) {
-    fun propina() = estadoDelCliente.modificador
+class Cliente(private val estadoDelCliente: Resfriado, val viveEn: LasLauchas, val bolsillo: Int = 0, val pedido: Pedido) {
+    fun propina() = 0
     fun estadoActual() = estadoDelCliente
+    fun modificarPropina() = estadoDelCliente.modificador(this) and viveEn.influencia(this)
 }
 class Pedido(val precio: Int = 0)
 

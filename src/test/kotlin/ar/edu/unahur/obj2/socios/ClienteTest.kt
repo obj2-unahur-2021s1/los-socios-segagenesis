@@ -7,6 +7,7 @@ class ClienteTest : DescribeSpec({
   describe("Un/a cliente") {
     val pedido1 = Pedido(1000)
     val cliente = Cliente(Resfriado, LasLauchas,1000,pedido1)
+    cliente.modificarPropina()
 
     describe("Prueba de propina"){
       cliente.propina().shouldBe(500)
