@@ -1,14 +1,15 @@
 package ar.edu.unahur.obj2.socios
 
 import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.shouldBe
 
 class ClienteTest : DescribeSpec({
   describe("Un/a cliente") {
-    val cliente = Cliente(Resfriado,LasLauchas,1000,pedido1)
     val pedido1 = Pedido(1000)
+    val cliente = Cliente(Resfriado, LasLauchas,1000,pedido1)
 
     describe("Prueba de propina"){
-      cliente.propina.shouldBe(500)
+      cliente.propina().shouldBe(500)
     }
     describe("Estado de animo del cliente"){
       cliente.estadoActual().shouldBe(Resfriado)

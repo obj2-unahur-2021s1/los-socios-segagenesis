@@ -1,49 +1,34 @@
 package ar.edu.unahur.obj2.socios
 
-class Cliente (val estadoActual = EstadosDelCliente, val viveEn = Barrios,val bolsillo = Int, val pedido: Pedido){
-    fun propina = EstadosDelCliente
-    fun valorPedido = Pedido
+class Cliente(private val estadoDelCliente = object, val viveEn = object, val bolsillo: Int = 0, val pedido: Pedido) {
+    fun propina() = estadoDelCliente.modificador
+    fun estadoActual() = estadoDelCliente
+}
+class Pedido(val precio: Int = 0)
+
+object Enojado{
+    fun modificador(cliente: Cliente) = 0
+}
+object Feliz{
+    fun modificador(cliente: Cliente) = cliente.pedido.precio * 0.25
+}
+object Indiferente{
+    fun modificador(cliente: Cliente) = cliente.bolsillo
+}
+object Resfriado{
+    fun modificador(cliente: Cliente) = cliente.pedido.precio
 }
 
-
-// esto puede ir en otro archivo pero no me deja crearlo
-class EstadosDelCliente(){
-    fun propina = Int
+object LasRosas{
+    fun influencia(cliente: Cliente) = 50
 }
-override class Enojado(): EstadosDelCliente{
-    fun propina = 0
+object LasLauchas{
+    fun influencia(cliente:Cliente) = cliente.propina() /2
 }
-override class Feliz() : EstadosDelCliente{
-    fun propina = valorPedido * 0.25
+object BarrioVerde{
+    fun influencia(cliente:Cliente) = cliente.propina().min(200)
 }
-override class Indiferente(): EstadosDelCliente{
-    fun propina = cliente.bolsillo
-}
-override class Resfriado(): EstadosDelCliente{
-    fun propina = cliente.valorPedido
-}
-
-// idem anterior otro archivo
-
-class Pedido(val precio = Int){
-
-}
-
-// idem anterior
-
-class Barrios(){
-    fun influencia = Float
-}
-
-override class LasRosas() : Barrios{
-    fun influencia = 50
-}
-override class LasLauchas(): Barrios{
-    fun influencia = cliente.daPropina /2
-}
-override class BarrioVerde(): Barrios{
-    fun influencia = cliente.propina = 200
-}
-override class LasTorres(): Barrios{
+object LasTorres{
+    fun influencia(cliente:Cliente) = cliente.propina() == 0
 
 }
