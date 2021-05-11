@@ -3,7 +3,6 @@ package ar.edu.unahur.obj2.socios
 class Cliente( val estadoDelCliente : EstadoAnimoCliente, val viveEn : String, val dineroEnBolsillo: Int = 0) {
     fun propina(importePedido: Int) = estadoDelCliente.propina(this,importePedido)
 }
-
 abstract class EstadoAnimoCliente() {
     abstract fun propina(cliente: Cliente,importePedido:Int):Int
 }
