@@ -17,7 +17,7 @@ class ClienteTest : DescribeSpec({
       cliente.dineroEnBolsillo.shouldBe(1000)
     }
     describe("Donde vive el cliente"){
-      cliente.viveEn.shouldBe("Las Lauchas")
+      cliente.viveEn.shouldBe("LasLauchas")
     }
   }
 })

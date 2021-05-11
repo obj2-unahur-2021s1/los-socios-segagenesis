@@ -35,6 +35,6 @@ object Resfriado: EstadoAnimoCliente() {
 //    fun influencia(cliente:Cliente) = cliente.propina().min(200)
 //}
 //object LasTorres{
-//    fun influencia(cliente:Cliente) = cliente.propina() == 0
+//    fun influencia(cliente:Cliente) = cliente.propina() ==0
 
 //}
