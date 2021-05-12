@@ -6,10 +6,6 @@ import io.kotest.matchers.shouldBe
 class ClienteTest : DescribeSpec({
   describe("Un/a cliente") {
     val cliente = Cliente(Resfriado, "LasLauchas",1000)
-
-    describe("Prueba de propina"){
-      cliente.propina(500).shouldBe(500)
-    }
     describe("Estado de animo del cliente"){
       cliente.estadoDelCliente.shouldBe(Resfriado)
     }
@@ -18,6 +14,24 @@ class ClienteTest : DescribeSpec({
     }
     describe("Donde vive el cliente"){
       cliente.viveEn.shouldBe("LasLauchas")
+    }
+    describe("Propina dependiendo su estado de animo"){
+      it("Cuando esta enojado ") {
+        cliente.estadoDelCliente = Enojado
+        cliente.propina(100).shouldBe(0)
+      }
+      it("Cuando esta feliz") {
+        cliente.estadoDelCliente = Feliz
+        cliente.propina(100).shouldBe(25)
+      }
+      it("Cuando esta indiferente") {
+        cliente.estadoDelCliente = Indiferente
+        cliente.propina(100).shouldBe(1000)
+      }
+      it("Cuando esta resfriado") {
+        cliente.estadoDelCliente = Resfriado
+        cliente.propina(100).shouldBe(100)
+      }
     }
   }
 })

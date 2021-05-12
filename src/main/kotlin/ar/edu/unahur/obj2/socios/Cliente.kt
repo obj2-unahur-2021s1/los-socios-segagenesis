@@ -1,6 +1,6 @@
 package ar.edu.unahur.obj2.socios
 
-class Cliente( val estadoDelCliente : EstadoAnimoCliente, val viveEn : String, val dineroEnBolsillo: Int = 0) {
+class Cliente( var estadoDelCliente : EstadoAnimoCliente, var viveEn : String, var dineroEnBolsillo: Int = 0) {
     fun propina(importePedido: Int) = estadoDelCliente.propina(this,importePedido)
 }
 abstract class EstadoAnimoCliente() {
@@ -12,7 +12,7 @@ object Enojado : EstadoAnimoCliente() {
 }
 
 object Feliz : EstadoAnimoCliente() {
-    override fun propina(cliente: Cliente,importePedido:Int) = importePedido * 0.25.toInt()
+    override fun propina(cliente: Cliente,importePedido:Int) = (importePedido * 0.25).toInt()
 }
 
 object Indiferente: EstadoAnimoCliente() {
