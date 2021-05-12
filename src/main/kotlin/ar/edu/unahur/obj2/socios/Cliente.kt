@@ -25,7 +25,7 @@ object Resfriado: EstadoAnimoCliente() {
 
 
 abstract class Barrios(){
-    open fun modificador(cliente: Cliente,importePedido: Int) = 0
+    open fun modificador(cliente: Cliente,importePedido: Int) = cliente.propina(importePedido)
 }
 object LasRosas: Barrios(){
     override fun modificador(cliente: Cliente,importePedido: Int) = cliente.propina(importePedido) + 50
@@ -37,5 +37,4 @@ object BarrioVerde: Barrios() {
     override fun modificador(cliente: Cliente, importePedido: Int) = cliente.propina(importePedido).minus(200)
 }
 object LasTorres : Barrios() {
-    override fun modificador(cliente: Cliente, importePedido: Int) = cliente.propina(importePedido) + 0
 }
