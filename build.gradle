@@ -1,8 +1,8 @@
 plugins {
-  id 'org.jetbrains.kotlin.jvm' version '1.4.32'
+  id 'org.jetbrains.kotlin.jvm' version '1.4.10'
 }
 G
-ext.kotestVersion = "4.4.3"
+ext.kotestVersion = "1.1.36"
 
 group 'ar.edu.unahur.obj2'
 version '1.0-SNAPSHOT'
@@ -20,11 +20,11 @@ dependencies {
 }
 
 compileKotlin {
-  kotlinOptions.jvmTarget = "1.8"
+  kotlinOptions.jvmTarget = "1.11"
 }
 
 compileTestKotlin {
-  kotlinOptions.jvmTarget = "1.8"
+  kotlinOptions.jvmTarget = "1.11"
 }
 
 test {
