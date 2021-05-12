@@ -14,7 +14,7 @@ class ClienteTest : DescribeSpec({
       cliente.dineroEnBolsillo.shouldBe(1000)
     }
     describe("Donde vive el cliente"){
-      cliente.viveEn.shouldBe("LasLauchas")
+      cliente.viveEn.shouldBe(LasLauchas)
     }
     describe("Propina dependiendo su estado de animo"){
       it("Cuando esta enojado ") {
@@ -37,23 +37,23 @@ class ClienteTest : DescribeSpec({
     describe("Propina dependiendo de donde vive"){
       it("Si Vive en Las Rosas"){
         cliente.viveEn = LasRosas
-        cliente.estadoDelCliente = Indiferente
-        cliente.propina(importePedido = 100).shouldBe(1050)
+        cliente.estadoDelCliente = Resfriado
+        cliente.modificarPorResidencia(importePedido = 100).shouldBe(150)
       }
       it("Si Vive en Las Lauchas"){
         cliente.viveEn = LasLauchas
-        cliente.estadoDelCliente = Indiferente
-        cliente.propina(importePedido = 100).shouldBe(500)
+        cliente.estadoDelCliente = Resfriado
+        cliente.modificarPorResidencia(importePedido = 100).shouldBe(50)
       }
       it("Si Vive en Barrio Verde"){
         cliente.viveEn = BarrioVerde
-        cliente.estadoDelCliente = Enojado
-        cliente.propina(importePedido = 100).shouldBe(200)
+        cliente.estadoDelCliente = Resfriado
+        cliente.modificarPorResidencia(importePedido = 100).shouldBe(200)
       }
       it("Si Vive en Las Torres"){
         cliente.viveEn = LasTorres
-        cliente.estadoDelCliente = Indiferente
-        cliente.propina(importePedido = 100).shouldBe(1000)
+        cliente.estadoDelCliente = Resfriado
+        cliente.modificarPorResidencia(importePedido = 100).shouldBe(100)
       }
     }
   }
