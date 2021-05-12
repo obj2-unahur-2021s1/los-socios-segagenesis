@@ -1,7 +1,7 @@
 plugins {
   id 'org.jetbrains.kotlin.jvm' version '1.4.32'
 }
-
+G
 ext.kotestVersion = "4.4.3"
 
 group 'ar.edu.unahur.obj2'
