@@ -35,7 +35,7 @@ object LasLauchas: Barrios(){
     override fun modificador(cliente:Cliente,importePedido: Int) = cliente.propina(importePedido) / 2
 }
 object BarrioVerde: Barrios() {
-    override fun modificador(cliente: Cliente, importePedido: Int): Int = cliente.propina(importePedido) = 200
+    override fun modificador(cliente: Cliente, importePedido: Int) = 200
 }
 object LasTorres : Barrios() {
     override fun modificador(cliente: Cliente,importePedido: Int) = cliente.propina(importePedido)
