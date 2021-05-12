@@ -2,7 +2,6 @@ package ar.edu.unahur.obj2.socios
 
 class Cliente( var estadoDelCliente : EstadoAnimoCliente, var viveEn : Barrios, var dineroEnBolsillo: Int = 0) {
     fun propina(importePedido: Int) = estadoDelCliente.propina(this,importePedido) and viveEn.modificador(estadoDelCliente,this,importePedido)
-
 }
 abstract class EstadoAnimoCliente() {
     abstract fun propina(cliente: Cliente,importePedido:Int):Int
@@ -29,7 +28,7 @@ abstract class Barrios(){
     abstract fun modificador(estadoDelCliente: EstadoAnimoCliente,cliente: Cliente,importePedido: Int):Int
 }
 object LasRosas: Barrios(){
-    override fun modificador(estadoDelCliente: EstadoAnimoCliente,cliente: Cliente,importePedido: Int) = estadoDelCliente.propina(cliente,importePedido)
+    override fun modificador(estadoDelCliente: EstadoAnimoCliente,cliente: Cliente,importePedido: Int) = (estadoDelCliente.propina(cliente,importePedido)) + 50
 }
 object LasLauchas: Barrios(){
     override fun modificador(estadoDelCliente: EstadoAnimoCliente,cliente:Cliente,importePedido: Int) = (estadoDelCliente.propina(cliente,importePedido))* 0.5.toInt()

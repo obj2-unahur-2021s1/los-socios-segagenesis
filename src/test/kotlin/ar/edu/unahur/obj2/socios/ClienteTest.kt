@@ -57,7 +57,7 @@ class ClienteTest : DescribeSpec({
       it("Si Vive en Las Torres"){
         cliente.viveEn = LasTorres
         cliente.estadoDelCliente = Feliz
-        cliente.propina(100).shouldBe(100)
+        cliente.propina(100).shouldBe(25)
       }
     }
   }
