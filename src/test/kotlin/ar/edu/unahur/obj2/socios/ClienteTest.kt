@@ -77,7 +77,7 @@ class ClienteTest : DescribeSpec({
         cliente.viveEn = BarrioVerde
         cliente.propina(1000).shouldBe(250)
       }
-      it("Está indiferente y vive en Las Torres") {
+      it("Está indiferente y vive en Las Torres.") {
         cliente.estadoDeAnimo = Indiferente
         cliente.viveEn = LasTorres
         cliente.propina(1000).shouldBe(1000)
