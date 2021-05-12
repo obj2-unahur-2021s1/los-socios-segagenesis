@@ -3,6 +3,7 @@ package ar.edu.unahur.obj2.socios
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 
+
 class ClienteTest : DescribeSpec({
   describe("Un/a cliente") {
     val cliente = Cliente(Resfriado, LasLauchas,1000)

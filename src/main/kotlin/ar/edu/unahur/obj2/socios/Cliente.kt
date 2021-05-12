@@ -37,4 +37,5 @@ object BarrioVerde: Barrios() {
     override fun modificador(cliente: Cliente, importePedido: Int) = cliente.propina(importePedido).minus(200)
 }
 object LasTorres : Barrios() {
+    override fun modificador(cliente: Cliente,importePedido: Int) = cliente.propina(importePedido)
 }
