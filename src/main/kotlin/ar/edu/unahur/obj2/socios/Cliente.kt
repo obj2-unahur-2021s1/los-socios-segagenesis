@@ -3,7 +3,7 @@ package ar.edu.unahur.obj2.socios
 class Cliente(var estadoDeAnimo : EstadoAnimoCliente, var viveEn : Barrio, var dineroEnBolsillo: Int = 0) {
 
     fun propina(importePedido: Int):Int {
-        var propina = estadoDeAnimo.propina(this,importePedido)
+        val propina = estadoDeAnimo.propina(this,importePedido)
         return this.viveEn.propina(this,propina)
     }
 }
