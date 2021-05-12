@@ -2,7 +2,7 @@ package ar.edu.unahur.obj2.socios
 
 class Cliente( var estadoDelCliente : EstadoAnimoCliente, var viveEn : Barrios, var dineroEnBolsillo: Int = 0) {
     fun propina(importePedido: Int) = estadoDelCliente.propina(this,importePedido)
-    fun modificarPorResidencia(importePedido: Int) = viveEn.modificador(this,importePedido)
+    fun propinaConModificacionDeResidencia(importePedido: Int) = viveEn.modificador(this,importePedido)
 }
 abstract class EstadoAnimoCliente() {
     abstract fun propina(cliente: Cliente,importePedido:Int):Int

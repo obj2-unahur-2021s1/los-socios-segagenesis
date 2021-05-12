@@ -38,22 +38,22 @@ class ClienteTest : DescribeSpec({
       it("Si Vive en Las Rosas"){
         cliente.viveEn = LasRosas
         cliente.estadoDelCliente = Resfriado
-        cliente.modificarPorResidencia(importePedido = 100).shouldBe(150)
+        cliente.propinaConModificacionDeResidencia(100).shouldBe(150)
       }
       it("Si Vive en Las Lauchas"){
         cliente.viveEn = LasLauchas
         cliente.estadoDelCliente = Resfriado
-        cliente.modificarPorResidencia(importePedido = 100).shouldBe(50)
+        cliente.propinaConModificacionDeResidencia(100).shouldBe(50)
       }
       it("Si Vive en Barrio Verde"){
         cliente.viveEn = BarrioVerde
         cliente.estadoDelCliente = Resfriado
-        cliente.modificarPorResidencia(importePedido = 100).shouldBe(200)
+        cliente.propinaConModificacionDeResidencia(100).shouldBe(200)
       }
       it("Si Vive en Las Torres"){
         cliente.viveEn = LasTorres
         cliente.estadoDelCliente = Resfriado
-        cliente.modificarPorResidencia(importePedido = 100).shouldBe(100)
+        cliente.propinaConModificacionDeResidencia(100).shouldBe(100)
       }
     }
   }
