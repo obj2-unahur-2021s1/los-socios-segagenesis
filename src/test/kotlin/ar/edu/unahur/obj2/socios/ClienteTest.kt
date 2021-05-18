@@ -17,23 +17,21 @@ class ClienteTest : DescribeSpec({
       cliente.viveEn.shouldBe(LasLauchas)
     }
     describe("Propina de un pedido de 100 pesos dependiendo su estado de animo"){
+      cliente.viveEn = LasTorres
+      
       it("Cuando esta enojado ") {
-        cliente.viveEn = LasTorres
         cliente.estadoDeAnimo = Enojado
         cliente.propina(100).shouldBe(0)
       }
       it("Cuando esta feliz") {
-        cliente.viveEn = LasTorres
         cliente.estadoDeAnimo = Feliz
         cliente.propina(100).shouldBe(25)
       }
       it("Cuando esta indiferente") {
-        cliente.viveEn = LasTorres
         cliente.estadoDeAnimo = Indiferente
         cliente.propina(100).shouldBe(1000)
       }
       it("Cuando esta resfriado") {
-        cliente.viveEn = LasTorres
         cliente.estadoDeAnimo = Resfriado
         cliente.propina(100).shouldBe(100)
       }
